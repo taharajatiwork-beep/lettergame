@@ -1,0 +1,23 @@
+app = "campfire-CHANGE-ME"
+primary_region = "fra"
+
+[build]
+
+[env]
+  PORT = "8080"
+  # Base URL used inside emailed links. Set to your real domain.
+  APP_URL = "https://campfire-CHANGE-ME.fly.dev"
+  # Sender shown on emails (must be a domain you verified at your mail provider).
+  # MAIL_FROM = "Campfire <noreply@yourdomain.com>"
+  # Keep RESEND_API_KEY out of this file: fly secrets set RESEND_API_KEY=...
+
+[mounts]
+  source = "campfire_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0

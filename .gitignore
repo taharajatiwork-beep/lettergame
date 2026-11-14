@@ -1,0 +1,7 @@
+# runtime data: user accounts, emails, password hashes, sessions
+data/
+*.log
+.env
+.env.*
+node_modules/
+.DS_Store
